@@ -35,7 +35,7 @@ public class Anagrams {
             return false;
 
         // Create a frequency array for all possible characters (e.g., ASCII)
-        int[] charArr = new int[256];
+        int[] charArr = new int[127];
 
         // Increment count for characters in s1
         for (int i = 0; i < s1.length(); i++)
