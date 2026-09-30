@@ -1,3 +1,5 @@
+package Arrays;
+
 import java.util.Collections;
 import java.util.Vector;
 
@@ -13,7 +15,8 @@ public class addingOne {
             newArr.add(arr[i] % 10);
             carry = arr[i] / 10;
         }
-        if (carry == 1) newArr.add(1); // If 'carry = 1' after loop termination
+        if (carry == 1)
+            newArr.add(1); // If 'carry = 1' after loop termination
 
         Collections.reverse(newArr);
         return newArr;

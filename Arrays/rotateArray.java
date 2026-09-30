@@ -1,12 +1,14 @@
+package Arrays;
+
 public class rotateArray {
 
     // Function to rotate array
     public static void rotate_array(int[] arr, int d) {
         int n = arr.length;
         d %= n;
-        reverse_array(arr, 0, d-1);
-        reverse_array(arr, d, n-1);
-        reverse_array(arr, 0, n-1);
+        reverse_array(arr, 0, d - 1);
+        reverse_array(arr, d, n - 1);
+        reverse_array(arr, 0, n - 1);
     }
 
     // Function to reverse array (Two-Pointer Approach)

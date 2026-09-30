@@ -1,3 +1,5 @@
+package Arrays;
+
 public class waveArray {
 
     public static void sortInWave(int[] arr) {

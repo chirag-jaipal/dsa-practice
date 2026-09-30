@@ -1,3 +1,5 @@
+package Arrays;
+
 public class segregate0and1 {
 
     // One Pass Approach
