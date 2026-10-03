@@ -23,14 +23,15 @@ public class MaximumSubarray {
   public static int maxSubarray(int[] nums) {
     int n = nums.length;
 
-    int currSum = 0;
-    int max = Integer.MIN_VALUE;
-    for (int i = 0; i < n; i++) {
-      currSum += nums[i];
-      max = Math.max(max, currSum);
+    int currSum = nums[0];
+    int max = nums[0];
+
+    for (int i = 1; i < n; i++) {
       if (currSum < 0) {
         currSum = 0;
       }
+      currSum += nums[i];
+      max = Math.max(max, currSum);
     }
 
     return max;
