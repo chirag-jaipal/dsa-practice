@@ -1,28 +1,24 @@
 package Arrays;
 
 public class rotateArray {
-
-    // Function to rotate array
-    public static void rotate_array(int[] arr, int d) {
-        int n = arr.length;
-        d %= n;
-        reverse_array(arr, 0, d - 1);
-        reverse_array(arr, d, n - 1);
-        reverse_array(arr, 0, n - 1);
+    public static void rotate(int[] nums, int k) {
+        int n = nums.length;
+        k %= n;
+        reverse(nums, 0, n - k - 1);
+        reverse(nums, n - k, n - 1);
+        reverse(nums, 0, n - 1);
     }
 
-    // Function to reverse array (Two-Pointer Approach)
-    private static void reverse_array(int[] arr, int i, int j) {
-        while (i < j) {
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-            i++;
-            j--;
+    private static void reverse(int[] nums, int idx1, int idx2) {
+        while (idx1 < idx2) {
+            int temp = nums[idx1];
+            nums[idx1] = nums[idx2];
+            nums[idx2] = temp;
+            idx1++;
+            idx2--;
         }
     }
 
-    // Function to print array
     public static void print(int[] arr) {
         for (int ele : arr) {
             System.out.print(ele + " ");
@@ -31,9 +27,15 @@ public class rotateArray {
     }
 
     public static void main(String[] args) {
-        int[] arr = { 1, 2, 3, 4, 5 };
-        int d = 2;
-        rotate_array(arr, d);
+        int[] arr = { -1, -100, 3, 99 };
+        int k = 2;
+
+        System.out.println("BEFORE: ");
+        print(arr);
+
+        rotate(arr, k);
+
+        System.out.println("AFTER: ");
         print(arr);
     }
 }
