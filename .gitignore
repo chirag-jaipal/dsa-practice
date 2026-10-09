@@ -1,4 +1,6 @@
 *.class
 *.txt
 .vscode/
+.agents/
+.codex/
 bin/
