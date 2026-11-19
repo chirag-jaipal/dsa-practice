@@ -1,7 +1,9 @@
 package Strings;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Map;
 
 public class LongestSubstringWithoutRepeats {
   private static boolean isUnique(String s, int l, int r) {
@@ -49,9 +51,27 @@ public class LongestSubstringWithoutRepeats {
     return maxLen;
   }
 
+  // Approach 3: Sliding window + map : O(n) time and O(n) space
+  public static int lengthOfLongestSubstringV3(String s) {
+    int maxLen = 0;
+    Map<Character, Integer> map = new HashMap<>();
+
+    int l = 0, r = 0;
+    while (r < s.length()) {
+      if (map.containsKey(s.charAt(r)) && map.get(s.charAt(r)) >= l) {
+        l = map.get(s.charAt(r)) + 1;
+      }
+      map.put(s.charAt(r), r);
+      maxLen = Math.max(maxLen, r - l + 1);
+      r++;
+    }
+    return maxLen;
+  }
+
   public static void main(String[] args) {
-    String s = "pwwkew";
+    String s = "bbbbb";
     System.out.println("RESULT: " + lengthOfLongestSubstring(s));
     System.out.println("RESULT: " + lengthOfLongestSubstringV2(s));
+    System.out.println("RESULT: " + lengthOfLongestSubstringV3(s));
   }
 }
