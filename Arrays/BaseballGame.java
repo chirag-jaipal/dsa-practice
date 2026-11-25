@@ -28,7 +28,6 @@ public class BaseballGame {
           record.add(Integer.parseInt(operations[i]));
           break;
       }
-      System.out.println(record);
     }
 
     int sum = 0;
