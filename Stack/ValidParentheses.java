@@ -16,6 +16,7 @@ public class ValidParentheses {
     return s.isEmpty();
   }
 
+  // Approach 2: Using Stack O(n) time and O(n) space
   public static boolean isValidOptimized(String s) {
     Map<Character, Character> map = new HashMap<>();
     map.put(')', '(');
